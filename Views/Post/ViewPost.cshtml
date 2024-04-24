@@ -1,0 +1,32 @@
+@model Post
+@{
+    ViewData["Title"] = "View Post";
+    @* below is the default layout if we don't provide anything *@
+    Layout = "_Layout";
+}
+
+
+<h2>@Model.ImageTitle</h2>
+<img src="@Model.ImageUrl" class="largerImages" alt="image">
+<h3>By: @Model.Creator.FirstName</h3>
+<h3>@Model.ImageMedium</h3>
+<h3>@(Model.ImageForSale ? "For Sale" : "Not For Sale")</h3>
+<h3>@Model.Likers.Count Like(s)</h3>
+
+@{bool liked = Model.Likers.Any(ug => ug.UserId == Context.Session.GetInt32("UserId"));}
+@if (Model.UserId == Context.Session.GetInt32("UserId"))
+
+    {
+        
+        <div class="d-flex">
+        <form asp-action="DeletePost" asp-controller="Post" asp-route-postId="@Model.PostId" method="post"><button>Delete</button>
+        </form>
+        <form asp-action="EditPost" asp-route-postId="@Model.PostId"><button>Edit</button></Form>
+        </div>
+    }
+    else
+    {
+        <form asp-action="TogglePost" asp-controller="Post" asp-route-postId="@Model.PostId" method="post"><button>
+                @(liked ? "Unlike" : "Like")
+            </button></form>
+    }

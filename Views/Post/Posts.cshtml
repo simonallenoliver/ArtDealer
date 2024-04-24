@@ -1,0 +1,41 @@
+@model List<Post>
+
+@{
+    ViewData["Title"] = "Posts";
+    @* below is the default layout if we don't provide anything *@
+    Layout = "_Layout";
+}
+
+<div class=" posts">
+
+    @foreach (Post p in Model)
+    {
+        
+            bool liked = p.Likers.Any(ug => ug.UserId == Context.Session.GetInt32("UserId"));
+            <div class="mx-4">
+            <img src="@p.ImageUrl" class="images" alt="photo">
+            <p><a asp-action="ViewPost" asp-controller="Post" asp-route-postId="@p.PostId">@p.ImageTitle</a></p>
+            <p>Posted by: @p.Creator.FirstName</p>
+            <p>Medium: @p.ImageMedium</p>
+            <p>Posted x minutes ago</p>
+            <p>@(p.ImageForSale ? "For Sale" : "Not For Sale")</p>
+            <p>@p.Likers.Count Like(s)</p>
+            @if (p.UserId == Context.Session.GetInt32("UserId"))
+
+            {
+                <div class="d-flex">
+                    <form asp-action="DeletePost" asp-controller="Post" asp-route-postId="@p.PostId" method="post">
+                        <button>Delete</button>
+                    </form>
+                    <a asp-action="EditPost" asp-route-postId="@p.PostId">Edit</a>
+                </div>
+            }
+            else
+            {
+                <form asp-action="TogglePost" asp-controller="Post" asp-route-postId="@p.PostId" method="post"><button>
+                        @(liked ? "Unlike" : "Like")
+                    </button></form>
+            }
+        </div>
+    }
+</div>

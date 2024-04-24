@@ -1,0 +1,39 @@
+
+@model Post
+@{
+    ViewData["Title"] = "New Post";
+    @* below is the default layout if we don't provide anything *@
+    Layout = "_Layout";
+}
+
+<h1>Make a Post</h1>
+
+<form asp-action="SubmitPost" asp-controller="Post" method="POST" class="shadow p-3 rounded">
+    <div class="d-flex justify-content-center">
+        @* col one *@
+        <div class="mx-2">
+            <div class="mb-5">
+                <label asp-for="ImageUrl"></label>
+                <input asp-for="ImageUrl" class="">
+                <span class="text-danger" asp-validation-for="ImageUrl"></span>
+            </div>
+            <div class="mb-5">
+                <label asp-for="ImageTitle"></label>
+                <input asp-for="ImageTitle" class="">
+                <span class="text-danger" asp-validation-for="ImageTitle"></span>
+            </div>
+            <div class="mb-5">
+                <label asp-for="ImageMedium"></label>
+                <input asp-for="ImageMedium" class="">
+                <span class="text-danger" asp-validation-for="ImageMedium"></span>
+            </div>
+            <div class="mb-5">
+                <label asp-for="ImageForSale"></label>
+                <input type="checkbox" asp-for="ImageForSale" class="">
+                <span class="text-danger" asp-validation-for="ImageForSale"></span>
+            </div>
+            <input asp-for="UserId" type="hidden" value="@Context.Session.GetInt32("UserId")">
+            <button>Post</button>
+        </div>
+    </div>
+</form>

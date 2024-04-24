@@ -1,0 +1,43 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+p {
+  line-height: 6px; /* within paragraph */
+  margin-top: 5px;
+  margin-bottom: 10px; /* between paragraphs */
+  }
+
+.images{
+  width: 300px;
+  height: 200px;
+}
+.largerImages{
+  width: 600px;
+  height: 400px;
+}
+
+.posts{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.AddArt:hover{
+transform: scale(1.1);
+}
