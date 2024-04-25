@@ -12,14 +12,13 @@
     {
         
             bool liked = p.Likers.Any(ug => ug.UserId == Context.Session.GetInt32("UserId"));
-            <div class="mx-4">
+            <div class="mx-4 artBox">
             <img src="@p.ImageUrl" class="images" alt="photo">
             <p><a asp-action="ViewPost" asp-controller="Post" asp-route-postId="@p.PostId">@p.ImageTitle</a></p>
             <p>Posted by: @p.Creator.FirstName</p>
             <p>Medium: @p.ImageMedium</p>
-            <p>Posted x minutes ago</p>
             <p>@(p.ImageForSale ? "For Sale" : "Not For Sale")</p>
-            <p>@p.Likers.Count Like(s)</p>
+            <p>@p.Likers.Count @(p.Likers.Count == 1 ? "Like" : "Likes")</p>
             @if (p.UserId == Context.Session.GetInt32("UserId"))
 
             {

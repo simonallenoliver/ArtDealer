@@ -41,3 +41,7 @@ p {
 .AddArt:hover{
 transform: scale(1.1);
 }
+
+.artBox{
+  margin-bottom: 20px;
+}
