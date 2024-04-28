@@ -45,3 +45,15 @@ transform: scale(1.1);
 .artBox{
   margin-bottom: 20px;
 }
+
+.welcome{
+  color: black;
+  font-family: serif;
+}
+
+.paintBG{
+  background-image: url("../images/paintBG.jpg");
+  background-repeat:repeat;
+  background-position:right;
+  background-size: 90%;
+}
