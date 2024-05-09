@@ -10,19 +10,18 @@
 
     @foreach (Post p in Model)
     {
-        
-            bool liked = p.Likers.Any(ug => ug.UserId == Context.Session.GetInt32("UserId"));
-            <div class="mx-4 artBox">
+
+        bool liked = p.Likers.Any(ug => ug.UserId == Context.Session.GetInt32("UserId"));
+        <div class="mx-4 artBox">
             <img src="@p.ImageUrl" class="images" alt="photo">
-            <p><a asp-action="ViewPost" asp-controller="Post" asp-route-postId="@p.PostId">@p.ImageTitle</a></p>
-            <p>Posted by: @p.Creator.FirstName</p>
-            <p>Medium: @p.ImageMedium</p>
-            <p>@(p.ImageForSale ? "For Sale" : "Not For Sale")</p>
-            <p>@p.Likers.Count @(p.Likers.Count == 1 ? "Like" : "Likes")</p>
-            @if (p.UserId == Context.Session.GetInt32("UserId"))
+            <div class="d-flex justify-content-between">
+                <p><a asp-action="ViewPost" asp-controller="Post" asp-route-postId="@p.PostId">@p.ImageTitle</a></p>
+                <div class="likesAndButton">
+                    <p>@p.Likers.Count @(p.Likers.Count == 1 ? "Like" : "Likes")</p>
+                    @if (p.UserId == Context.Session.GetInt32("UserId"))
 
             {
-                <div class="d-flex">
+                <div class="editDelete">
                     <form asp-action="DeletePost" asp-controller="Post" asp-route-postId="@p.PostId" method="post">
                         <button>Delete</button>
                     </form>
@@ -31,10 +30,16 @@
             }
             else
             {
-                <form asp-action="TogglePost" asp-controller="Post" asp-route-postId="@p.PostId" method="post"><button>
+                <form asp-action="TogglePost" asp-controller="Post" asp-route-postId="@p.PostId" method="post"><button class="likeButton">
                         @(liked ? "Unlike" : "Like")
                     </button></form>
             }
+                </div>
+            </div>
+            <p>Posted by: @p.Creator.FirstName</p>
+            <p>Medium: @p.ImageMedium</p>
+            <p>@(p.ImageForSale ? "For Sale" : "Not For Sale")</p>
+            
         </div>
     }
 </div>

@@ -2,14 +2,12 @@
 
 <form asp-action="LoginUser" asp-controller="User" method="Post">
 <h3>Login</h3>
-<div>
-    <label asp-for="LogEmail"></label>
-    <input asp-for="LogEmail">
+<div class="myFormLines">
+    <input asp-for="LogEmail" class=""form-control form-control-lg" type="text" placeholder="Email">
     <span class="text-danger" asp-validation-for="LogEmail"></span>
 </div>
-<div>
-    <label asp-for="LogPassword"></label>
-    <input asp-for="LogPassword">
+<div class="myFormLines"> 
+    <input asp-for="LogPassword" class=""form-control form-control-lg" type="password" placeholder="Password">
     <span class="text-danger" asp-validation-for="LogPassword"></span>
 </div>
 <button>Submit</button>

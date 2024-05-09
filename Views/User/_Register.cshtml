@@ -2,29 +2,25 @@
 
 <form asp-action="RegisterUser" asp-controller="User" method="Post">
 <h3>Register</h3>
-<div>
-    <label asp-for="FirstName">First Name: </label>
-    <input asp-for="FirstName">
+<div class="myFormLines">
+    <input asp-for="FirstName" class=""form-control form-control-lg" type="text" placeholder="First Name">
     <span class="text-danger" asp-validation-for="FirstName"></span>
 </div>
-<div>
-    <label asp-for="LastName"> Last Name: </label>
-    <input asp-for="LastName">
+<div class="myFormLines">
+    <input asp-for="LastName" class=""form-control form-control-lg" type="text" placeholder="Last Name">
     <span class="text-danger" asp-validation-for="LastName"></span>
 </div>
-<div>
-    <label asp-for="Email">Email Address: </label>
-    <input asp-for="Email">
+<div class="myFormLines">
+    <input asp-for="Email" class=""form-control form-control-lg" type="text" placeholder="Email">
     <span class="text-danger" asp-validation-for="Email"></span>
 </div>
-<div>
-    <label asp-for="Password"> Password: </label>
-    <input asp-for="Password">
+<div class="myFormLines">
+    
+    <input type="password" asp-for="Password" class=""form-control form-control-lg" type="password" placeholder="Password">
     <span class="text-danger" asp-validation-for="Password"></span>
 </div>
-<div>
-    <label asp-for="PasswordConfirm">Confirm Password: </label>
-    <input type="password" asp-for="PasswordConfirm">
+<div class="myFormLines">
+    <input asp-for="PasswordConfirm" class=""form-control form-control-lg" type="password" placeholder="Confirm Password">
     <span class="text-danger" asp-validation-for="PasswordConfirm"></span>
 </div>
 <button>Submit</button>

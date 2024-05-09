@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "uV/xIEjn/5hHyathW7HnbwjM7TFXvqSdY94Pq2C5OTs=",
+  "Hash": "ZkI74zk8n7Tmwkzi72Ey58tsuTVvGYH5iHIKV6jIHug=",
   "Source": "ArtDealer",
   "BasePath": "_content/ArtDealer",
   "Mode": "Default",
@@ -83,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.ico"
+    },
+    {
+      "Identity": "C:\\Users\\simon\\OneDrive\\Desktop\\codingStuff\\ArtDealer\\wwwroot\\images\\paintBG.jpg",
+      "SourceId": "ArtDealer",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\simon\\OneDrive\\Desktop\\codingStuff\\ArtDealer\\wwwroot\\",
+      "BasePath": "_content/ArtDealer",
+      "RelativePath": "images/paintBG.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\paintBG.jpg"
     },
     {
       "Identity": "C:\\Users\\simon\\OneDrive\\Desktop\\codingStuff\\ArtDealer\\wwwroot\\js\\site.js",

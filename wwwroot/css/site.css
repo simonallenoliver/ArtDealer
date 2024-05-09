@@ -1,3 +1,9 @@
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 html {
   font-size: 14px;
 }
@@ -14,13 +20,12 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin-bottom: 0px;
 }
 
 p {
-  line-height: 6px; /* within paragraph */
-  margin-top: 5px;
-  margin-bottom: 10px; /* between paragraphs */
+  line-height: 7px; /* within paragraph */
+  margin-top: 15px; /* between paragraphs */
   }
 
 .images{
@@ -38,7 +43,7 @@ p {
   justify-content: center;
 }
 
-.AddArt:hover{
+.addArt:hover{
 transform: scale(1.1);
 }
 
@@ -48,12 +53,44 @@ transform: scale(1.1);
 
 .welcome{
   color: black;
-  font-family: serif;
+  text-align:leftS;
+  margin-bottom: 50px;
 }
 
+
 .paintBG{
-  background-image: url("../images/paintBG.jpg");
-  background-repeat:repeat;
-  background-position:right;
-  background-size: 90%;
+  width: 450px;
+  height: 250px;
+}
+
+.fullscreen{
+  height: 100vh;
+}
+
+.myRow{
+  gap: 40px;
+}
+
+.yellow{
+  background-color: yellow;
+  padding: 20px 30px 80px 30px;
+}
+
+.myFormLines{
+  margin-bottom: 10px; /* between paragraphs */
+}
+
+.likesAndButton{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.likeButton{
+  background-color: yellow;
+  padding: 0 4px 0 4px;
+}
+
+.editDelete{
+  display: flex;
+  gap: 10px;
 }

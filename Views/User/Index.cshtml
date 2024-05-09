@@ -2,17 +2,24 @@
     ViewData["Title"] = "Home Page";
     Layout = "_LoginLayout";
 }
-<h1 class="welcome">Welcome to ArtDealer!</h1>
+<div class="d-flex justify-content-center align-items-center fullscreen">
+    <div class="yellow">
+        <h1 class="welcome">Welcome to ArtDealer!</h1>
+        @* two partials, login and registration, for our login page *@
+        <div class="d-flex justify-content-space-between myRow">
+            @* col 1 *@
+            <div>
+                @* we're just being explicit and passing the view model as the second argument but it's not necessarry
+                here
+                *@
+                @await Html.PartialAsync("_Register", new User())
+            </div>
+            <div><img src="~/images/paintBG.jpg" alt="painting" class="paintBG"></div>
 
-<div class="d-flex justify-content-space-between">
-    @* col 1 *@
-    <div> 
-        @* we're just being explicit and passing the view model as the second argument but it's not necessarry here *@
-        @await Html.PartialAsync("_Register", new User())
-        
-    </div>
-    @* col 2 *@
-    <div>
-        @await Html.PartialAsync("_LogUser", new LogUser())
+            @* col 2 *@
+            <div>
+                @await Html.PartialAsync("_LogUser", new LogUser())
+            </div>
+        </div>
     </div>
 </div>
